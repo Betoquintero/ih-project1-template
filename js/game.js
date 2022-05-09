@@ -110,13 +110,52 @@ _checkCollisions(){
     )
   ) {
       this.tasksCompleted++;
+      this.task1.x = -200;
   }
+
+    if ((
+        this.father.x >= this.task2.x && this.father.x <= this.task2.x + this.task2.width ||
+        this.father.x + this.father.width >= this.task2.x && this.father.x + this.father.width <= this.task2.x + this.task2.width 
+    ) && 
+    (
+        this.father.y >= this.task2.y && this.father.y <= this.task2.y + this.task2.width ||
+        this.father.y + this.father.height >= this.task2.y && this.father.y +this.father.height <= this.task2.y + this.task2.height
+    )
+  ) {
+      this.tasksCompleted++;
+      this.task2.x = -200;
+  }
+
+    if ((
+        this.father.x >= this.task3.x && this.father.x <= this.task3.x + this.task3.width ||
+        this.father.x + this.father.width >= this.task3.x && this.father.x + this.father.width <= this.task3.x + this.task3.width 
+    ) && 
+    (
+        this.father.y >= this.task3.y && this.father.y <= this.task3.y + this.task3.width ||
+        this.father.y + this.father.height >= this.task3.y && this.father.y +this.father.height <= this.task3.y + this.task3.height
+    )
+  ) {
+      this.tasksCompleted++;
+      this.task3.x = -200;
+  }
+
+  if (this.tasksCompleted === 3){    
+    this._gameOver();
+  }
+    
 }
 
 _writeScore(){
     this.ctx.fillStyle = 'blue';
     this.ctx.font = '20px Verdana';
     this.ctx.fillText(`Tasks completed: ${this.tasksCompleted}`, 700, 500)
+}
+
+_gameOver(){
+  const winPage = document.getElementById('win-page')
+  winPage.style = "display: flex";
+  const canvas = document.getElementById('canvas')
+  canvas.style = 'display: none;'
 }
 
 }
