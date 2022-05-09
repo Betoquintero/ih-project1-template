@@ -29,10 +29,13 @@ class Game {
   }
 
   _drawTasks(){
-      this.ctx.fillStyle = "green";
-      this.ctx.fillRect (this.task1.x, this.task1.y, this.task1.width, this.task1.height);
-      this.ctx.fillRect (this.task2.x, this.task2.y, this.task2.width, this.task2.height);
-      this.ctx.fillRect (this.task3.x, this.task3.y, this.task3.width, this.task3.height);
+    this.ctx.drawImage(task1, this.task1.x, this.task1.y, this.task1.width, this.task1.height)
+    this.ctx.drawImage(task2, this.task2.x, this.task2.y, this.task2.width, this.task2.height)
+    this.ctx.drawImage(task3, this.task3.x, this.task3.y, this.task3.width, this.task3.height)
+      //this.ctx.fillStyle = "green";
+      //this.ctx.fillRect (this.task1.x, this.task1.y, this.task1.width, this.task1.height);
+      //this.ctx.fillRect (this.task2.x, this.task2.y, this.task2.width, this.task2.height);
+      //this.ctx.fillRect (this.task3.x, this.task3.y, this.task3.width, this.task3.height);
   }
 
   _clean(){
