@@ -6,3 +6,6 @@ task2.src = './img/task2.png';
 
 const task3 = new Image();
 task3.src = './img/task3.png';
+
+const obstacle1 = new Image();
+obstacle1.src = './img/burgershop.png';

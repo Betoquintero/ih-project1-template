@@ -3,23 +3,27 @@ class Player {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.height = height;
+        this.height = height;        
     }
 
     moveRight() {
-        this.x = this.x + 3;
+         if (this.x + this.width < 1000)
+         {this.x = this.x + 3};
     }
 
     moveLeft(){
-        this.x = this.x -3
+        if (this.x > 0) 
+         {this.x = this.x -3}
     }
 
     moveUp(){
-        this.y = this.y - 3
+        if (this.y > 0) 
+         {this.y = this.y - 3}
     }
 
     moveDown(){
-        this.y = this.y + 3
+        if (this.y + this.height < 600) 
+        {this.y = this.y + 3}
     }
 
 }

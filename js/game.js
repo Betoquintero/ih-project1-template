@@ -16,9 +16,19 @@ class Game {
               pressed :false
           }
       }
-      this.task1 = new Task (10, 10, 40, 40)
+
+      //this.isColiding = {
+        //right : false,
+        //left : false,
+       // up : false,
+       // down : false,
+      //}
+
+
+      this.task1 = new Task (30, 150, 40, 40)
       this.task2 = new Task (900, 0 , 40 , 40)
       this.task3 = new Task (0, 500, 40 , 40)
+      this.obstacle1 = new Obstacle (10, 10, 150, 150)
       this.tasksCompleted = 0
 
   }
@@ -38,24 +48,58 @@ class Game {
       //this.ctx.fillRect (this.task3.x, this.task3.y, this.task3.width, this.task3.height);
   }
 
+  _drawObstacles(){
+    this.ctx.drawImage(obstacle1, this.obstacle1.x, this.obstacle1.y, this.obstacle1.width, this.obstacle1.height)
+    //this.ctx.fillStyle = "red";
+    //this.ctx.fillRect (this.obstacle1.x, this.obstacle1.y, this.obstacle1.width, this.obstacle1.height);
+  }
+
   _clean(){
       this.ctx.clearRect(0, 0, 1000, 600)
   }
 
   _update(){
+    let isColiding = {
+      right : false,
+      left : false,
+      up : false,
+      down : false,
+    }
+      if ((this.father.x + this.father.width >= this.obstacle1.x && this.father.x + this.father.width < this.obstacle1.x + this.obstacle1.width) && (this.father.y >= this.obstacle1.y && this.father.y <= this.obstacle1.y + this.obstacle1.height ||
+        this.father.y + this.father.height >= this.obstacle1.y && this.father.y + this.father.height <= this.obstacle1.y + this.obstacle1.height)){
+          isColiding.right = true;          
+        }
+        
+      if ((this.father.x <= this.obstacle1.x + this.obstacle1.width && this.father.x > this.obstacle1.x) && (this.father.y >= this.obstacle1.y && this.father.y <= this.obstacle1.y + this.obstacle1.height ||
+         this.father.y + this.father.height >= this.obstacle1.y && this.father.y + this.father.height <= this.obstacle1.y + this.obstacle1.height)){
+           isColiding.left = true;          
+        } 
+        
+      if ((this.father.y >= this.obstacle1.y && this.father.y <= this.obstacle1.y + this.obstacle1.height) && (this.father.x >= this.obstacle1.x && this.father.x <= this.obstacle1.x + this.obstacle1.width ||
+         this.father.x + this.father.width >= this.obstacle1.x && this.father.x + this.father.width <= this.obstacle1.x + this.obstacle1.width)){
+           isColiding.up = true;          
+        }
+
+      if ((this.father.y + this.father.height >= this.obstacle1.y && this.father.y + this.father.height <= this.obstacle1.y + this.obstacle1.height) && (this.father.x >= this.obstacle1.x && this.father.x <= this.obstacle1.x + this.obstacle1.width ||
+         this.father.x + this.father.width >= this.obstacle1.x && this.father.x + this.father.width <= this.obstacle1.x + this.obstacle1.width)){
+           isColiding.down = true;          
+        }
+          
+ 
       this._clean();
       this._drawFather();
       this._drawTasks();
+      this._drawObstacles();
       this._checkCollisions();
       this._writeScore();
       window.requestAnimationFrame(() => this._update());
-      if (this.keys.w.pressed){        
+      if (this.keys.w.pressed && !isColiding.up){        
           this.father.moveUp();        
-      } else if (this.keys.a.pressed){
+      } else if (this.keys.a.pressed && !isColiding.left){
           this.father.moveLeft();
-      } else if (this.keys.s.pressed){
+      } else if (this.keys.s.pressed && !isColiding.down){
           this.father.moveDown();
-      } else if (this.keys.d.pressed){
+      } else if (this.keys.d.pressed && !isColiding.right){
           this.father.moveRight()
       }
   }
