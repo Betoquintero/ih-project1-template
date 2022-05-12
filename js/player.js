@@ -12,7 +12,7 @@ class Player {
     }
 
     moveLeft(){
-        if (this.x > 0) 
+        if (this.x > 170) 
          {this.x = this.x -3}
     }
 
@@ -22,7 +22,7 @@ class Player {
     }
 
     moveDown(){
-        if (this.y + this.height < 600) 
+        if (this.y + this.height < 450) 
         {this.y = this.y + 3}
     }
 

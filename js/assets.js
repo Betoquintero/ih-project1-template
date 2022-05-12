@@ -9,3 +9,9 @@ task3.src = './img/task3.png';
 
 const obstacle1 = new Image();
 obstacle1.src = './img/burgershop.png';
+
+const obstacle2 = new Image();
+obstacle2.src = './img/hospital.png';
+
+const obstacle3 = new Image();
+obstacle3.src = './img/shoppingmall.png';
