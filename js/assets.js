@@ -14,4 +14,4 @@ const obstacle2 = new Image();
 obstacle2.src = './img/hospital.png';
 
 const obstacle3 = new Image();
-obstacle3.src = './img/shoppingmall.png';
+obstacle3.src = './img/centro-comercial.png';

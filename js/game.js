@@ -25,12 +25,17 @@ class Game {
       //}
 
 
-      this.task1 = new Task (210, 240, 50, 50)
-      this.task2 = new Task (330, 390 , 50 , 50)
+      this.task1 = new Task (300, 210, 50, 50)
+      this.task2 = new Task (350, 390 , 50 , 50)
       this.task3 = new Task (825, 220, 50 , 50)
       this.obstacle1 = new Obstacle (160, 110, 150, 150)
       this.obstacle2 = new Obstacle (790, 71, 150, 150)
-      this.obstacle3 = new Obstacle (170, 300, 140, 170) 
+      this.obstacle3 = new Obstacle (170, 290, 170, 160)
+      this.water1 = new Obstacle (670, 240, 150, 150) 
+      this.water2 = new Obstacle (880, 320, 90, 70)
+      this.house1 = new Obstacle (340, 95, 225, 110)
+      this.house2 = new Obstacle (340, 290, 100, 80)
+      this.house3 = new Obstacle (520, 280, 100, 100) 
       this.tasksCompleted = 0
 
   }
@@ -54,8 +59,12 @@ class Game {
     this.ctx.drawImage(obstacle1, this.obstacle1.x, this.obstacle1.y, this.obstacle1.width, this.obstacle1.height)
     this.ctx.drawImage(obstacle2, this.obstacle2.x, this.obstacle2.y, this.obstacle2.width, this.obstacle2.height)
     this.ctx.drawImage(obstacle3, this.obstacle3.x, this.obstacle3.y, this.obstacle3.width, this.obstacle3.height)
-    //this.ctx.fillStyle = "red";
-    //this.ctx.fillRect (this.obstacle1.x, this.obstacle1.y, this.obstacle1.width, this.obstacle1.height);
+    this.ctx.fillStyle = "transparent";
+    this.ctx.fillRect (this.water1.x, this.water1.y, this.water1.width, this.water1.height);
+    this.ctx.fillRect (this.water2.x, this.water2.y, this.water2.width, this.water2.height);
+    this.ctx.fillRect (this.house1.x, this.house1.y, this.house1.width, this.house1.height);
+    this.ctx.fillRect (this.house2.x, this.house2.y, this.house2.width, this.house2.height);
+    this.ctx.fillRect (this.house3.x, this.house3.y, this.house3.width, this.house3.height);
   }
 
   _clean(){
@@ -89,45 +98,148 @@ class Game {
            isColiding.down = true;          
         }
 
-        if ((this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width < this.obstacle2.x + this.obstacle2.width) && (this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height ||
-          this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height)){
+      if ((this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width < this.obstacle2.x + this.obstacle2.width) && (this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height ||
+         this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height)){
             isColiding.right = true;          
           }
           
-        if ((this.father.x <= this.obstacle2.x + this.obstacle2.width && this.father.x > this.obstacle2.x) && (this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height ||
-           this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height)){
-             isColiding.left = true;          
+      if ((this.father.x <= this.obstacle2.x + this.obstacle2.width && this.father.x > this.obstacle2.x) && (this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height ||
+          this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height)){
+            isColiding.left = true;          
           } 
           
-        if ((this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height) && (this.father.x >= this.obstacle2.x && this.father.x <= this.obstacle2.x + this.obstacle2.width ||
-           this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width <= this.obstacle2.x + this.obstacle2.width)){
-             isColiding.up = true;          
+      if ((this.father.y >= this.obstacle2.y && this.father.y <= this.obstacle2.y + this.obstacle2.height) && (this.father.x >= this.obstacle2.x && this.father.x <= this.obstacle2.x + this.obstacle2.width ||
+          this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width <= this.obstacle2.x + this.obstacle2.width)){
+            isColiding.up = true;          
           }
   
-        if ((this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height) && (this.father.x >= this.obstacle2.x && this.father.x <= this.obstacle2.x + this.obstacle2.width ||
-           this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width <= this.obstacle2.x + this.obstacle2.width)){
-             isColiding.down = true;          
+      if ((this.father.y + this.father.height >= this.obstacle2.y && this.father.y + this.father.height <= this.obstacle2.y + this.obstacle2.height) && (this.father.x >= this.obstacle2.x && this.father.x <= this.obstacle2.x + this.obstacle2.width ||
+          this.father.x + this.father.width >= this.obstacle2.x && this.father.x + this.father.width <= this.obstacle2.x + this.obstacle2.width)){
+            isColiding.down = true;          
           }
 
-          if ((this.father.x + this.father.width >= this.obstacle3.x && this.father.x + this.father.width < this.obstacle3.x + this.obstacle3.width) && (this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height ||
-            this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height)){
-              isColiding.right = true;          
-            }
+      if ((this.father.x + this.father.width >= this.obstacle3.x && this.father.x + this.father.width < this.obstacle3.x + this.obstacle3.width) && (this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height ||
+          this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height)){
+            isColiding.right = true;          
+          }
             
-          if ((this.father.x <= this.obstacle3.x + this.obstacle3.width && this.father.x > this.obstacle3.x) && (this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height ||
-             this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height)){
-               isColiding.left = true;          
-            } 
+        if ((this.father.x <= this.obstacle3.x + this.obstacle3.width && this.father.x > this.obstacle3.x) && (this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height ||
+          this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height)){
+             isColiding.left = true;          
+          } 
             
-          if ((this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height) && (this.father.x >= this.obstacle3.x && this.father.x <= this.obstacle3.x + this.obstacle3.width ||
+        if ((this.father.y >= this.obstacle3.y && this.father.y <= this.obstacle3.y + this.obstacle3.height) && (this.father.x >= this.obstacle3.x && this.father.x <= this.obstacle3.x + this.obstacle3.width ||
              this.father.x + this.father.width >= this.obstacle3.x && this.father.x + this.father.width <= this.obstacle3.x + this.obstacle3.width)){
                isColiding.up = true;          
-            }
+          }
     
-          if ((this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height) && (this.father.x >= this.obstacle3.x && this.father.x <= this.obstacle3.x + this.obstacle3.width ||
+        if ((this.father.y + this.father.height >= this.obstacle3.y && this.father.y + this.father.height <= this.obstacle3.y + this.obstacle3.height) && (this.father.x >= this.obstacle3.x && this.father.x <= this.obstacle3.x + this.obstacle3.width ||
              this.father.x + this.father.width >= this.obstacle3.x && this.father.x + this.father.width <= this.obstacle3.x + this.obstacle3.width)){
                isColiding.down = true;          
-            }
+          }
+
+          
+        if ((this.father.x + this.father.width >= this.water1.x && this.father.x + this.father.width < this.water1.x + this.water1.width) && (this.father.y >= this.water1.y && this.father.y <= this.water1.y + this.water1.height ||
+              this.father.y + this.father.height >= this.water1.y && this.father.y + this.father.height <= this.water1.y + this.water1.height)){
+                isColiding.right = true;          
+          }
+              
+        if ((this.father.x <= this.water1.x + this.water1.width && this.father.x > this.water1.x) && (this.father.y >= this.water1.y && this.father.y <= this.water1.y + this.water1.height ||
+               this.father.y + this.father.height >= this.water1.y && this.father.y + this.father.height <= this.water1.y + this.water1.height)){
+              isColiding.left = true;          
+          } 
+              
+        if ((this.father.y >= this.water1.y && this.father.y <= this.water1.y + this.water1.height) && (this.father.x >= this.water1.x && this.father.x <= this.water1.x + this.water1.width ||
+              this.father.x + this.father.width >= this.water1.x && this.father.x + this.father.width <= this.water1.x + this.water1.width)){
+              isColiding.up = true;          
+          }
+      
+        if ((this.father.y + this.father.height >= this.water1.y && this.father.y + this.father.height <= this.water1.y + this.water1.height) && (this.father.x >= this.water1.x && this.father.x <= this.water1.x + this.water1.width ||
+              this.father.x + this.father.width >= this.water1.x && this.father.x + this.father.width <= this.water1.x + this.water1.width)){
+              isColiding.down = true;          
+          }
+
+        if ((this.father.x + this.father.width >= this.water2.x && this.father.x + this.father.width < this.water2.x + this.water2.width) && (this.father.y >= this.water2.y && this.father.y <= this.water2.y + this.water2.height ||
+            this.father.y + this.father.height >= this.water2.y && this.father.y + this.father.height <= this.water2.y + this.water2.height)){
+              isColiding.right = true;          
+          }
+            
+       if ((this.father.x <= this.water2.x + this.water2.width && this.father.x > this.water2.x) && (this.father.y >= this.water2.y && this.father.y <= this.water2.y + this.water2.height ||
+             this.father.y + this.father.height >= this.water2.y && this.father.y + this.father.height <= this.water2.y + this.water2.height)){
+            isColiding.left = true;          
+          } 
+            
+       if ((this.father.y >= this.water2.y && this.father.y <= this.water2.y + this.water2.height) && (this.father.x >= this.water2.x && this.father.x <= this.water2.x + this.water2.width ||
+            this.father.x + this.father.width >= this.water2.x && this.father.x + this.father.width <= this.water2.x + this.water2.width)){
+            isColiding.up = true;          
+          }
+    
+       if ((this.father.y + this.father.height >= this.water2.y && this.father.y + this.father.height <= this.water2.y + this.water2.height) && (this.father.x >= this.water2.x && this.father.x <= this.water2.x + this.water2.width ||
+            this.father.x + this.father.width >= this.water2.x && this.father.x + this.father.width <= this.water2.x + this.water2.width)){
+            isColiding.down = true;          
+          }
+
+          if ((this.father.x + this.father.width >= this.house1.x && this.father.x + this.father.width < this.house1.x + this.house1.width) && (this.father.y >= this.house1.y && this.father.y <= this.house1.y + this.house1.height ||
+            this.father.y + this.father.height >= this.house1.y && this.father.y + this.father.height <= this.house1.y + this.house1.height)){
+              isColiding.right = true;          
+          }
+            
+       if ((this.father.x <= this.house1.x + this.house1.width && this.father.x > this.house1.x) && (this.father.y >= this.house1.y && this.father.y <= this.house1.y + this.house1.height ||
+             this.father.y + this.father.height >= this.house1.y && this.father.y + this.father.height <= this.house1.y + this.house1.height)){
+            isColiding.left = true;          
+          } 
+            
+       if ((this.father.y >= this.house1.y && this.father.y <= this.house1.y + this.house1.height) && (this.father.x >= this.house1.x && this.father.x <= this.house1.x + this.house1.width ||
+            this.father.x + this.father.width >= this.house1.x && this.father.x + this.father.width <= this.house1.x + this.house1.width)){
+            isColiding.up = true;          
+          }
+    
+       if ((this.father.y + this.father.height >= this.house1.y && this.father.y + this.father.height <= this.house1.y + this.house1.height) && (this.father.x >= this.house1.x && this.father.x <= this.house1.x + this.house1.width ||
+            this.father.x + this.father.width >= this.house1.x && this.father.x + this.father.width <= this.house1.x + this.house1.width)){
+            isColiding.down = true;          
+          }
+
+        if ((this.father.x + this.father.width >= this.house2.x && this.father.x + this.father.width < this.house2.x + this.house2.width) && (this.father.y >= this.house2.y && this.father.y <= this.house2.y + this.house2.height ||
+            this.father.y + this.father.height >= this.house2.y && this.father.y + this.father.height <= this.house2.y + this.house2.height)){
+              isColiding.right = true;          
+          }
+            
+       if ((this.father.x <= this.house2.x + this.house2.width && this.father.x > this.house2.x) && (this.father.y >= this.house2.y && this.father.y <= this.house2.y + this.house2.height ||
+             this.father.y + this.father.height >= this.house2.y && this.father.y + this.father.height <= this.house2.y + this.house2.height)){
+            isColiding.left = true;          
+          } 
+            
+       if ((this.father.y >= this.house2.y && this.father.y <= this.house2.y + this.house2.height) && (this.father.x >= this.house2.x && this.father.x <= this.house2.x + this.house2.width ||
+            this.father.x + this.father.width >= this.house2.x && this.father.x + this.father.width <= this.house2.x + this.house2.width)){
+            isColiding.up = true;          
+          }
+    
+       if ((this.father.y + this.father.height >= this.house2.y && this.father.y + this.father.height <= this.house2.y + this.house2.height) && (this.father.x >= this.house2.x && this.father.x <= this.house2.x + this.house2.width ||
+            this.father.x + this.father.width >= this.house2.x && this.father.x + this.father.width <= this.house2.x + this.house2.width)){
+            isColiding.down = true;          
+          }
+
+          if ((this.father.x + this.father.width >= this.house3.x && this.father.x + this.father.width < this.house3.x + this.house3.width) && (this.father.y >= this.house3.y && this.father.y <= this.house3.y + this.house3.height ||
+            this.father.y + this.father.height >= this.house3.y && this.father.y + this.father.height <= this.house3.y + this.house3.height)){
+              isColiding.right = true;          
+          }
+            
+       if ((this.father.x <= this.house3.x + this.house3.width && this.father.x > this.house3.x) && (this.father.y >= this.house3.y && this.father.y <= this.house3.y + this.house3.height ||
+             this.father.y + this.father.height >= this.house3.y && this.father.y + this.father.height <= this.house3.y + this.house3.height)){
+            isColiding.left = true;          
+          } 
+            
+       if ((this.father.y >= this.house3.y && this.father.y <= this.house3.y + this.house3.height) && (this.father.x >= this.house3.x && this.father.x <= this.house3.x + this.house3.width ||
+            this.father.x + this.father.width >= this.house3.x && this.father.x + this.father.width <= this.house3.x + this.house3.width)){
+            isColiding.up = true;          
+          }
+    
+       if ((this.father.y + this.father.height >= this.house3.y && this.father.y + this.father.height <= this.house3.y + this.house3.height) && (this.father.x >= this.house3.x && this.father.x <= this.house3.x + this.house3.width ||
+            this.father.x + this.father.width >= this.house3.x && this.father.x + this.father.width <= this.house3.x + this.house3.width)){
+            isColiding.down = true;          
+          }
+
+
           
  
       this._clean();
