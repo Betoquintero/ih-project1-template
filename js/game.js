@@ -17,14 +17,6 @@ class Game {
           }
       }
 
-      //this.isColiding = {
-        //right : false,
-        //left : false,
-       // up : false,
-       // down : false,
-      //}
-
-
       this.task1 = new Task (300, 210, 50, 50)
       this.task2 = new Task (350, 390 , 50 , 50)
       this.task3 = new Task (825, 220, 50 , 50)
@@ -37,6 +29,7 @@ class Game {
       this.house2 = new Obstacle (340, 290, 100, 80)
       this.house3 = new Obstacle (520, 280, 100, 100) 
       this.tasksCompleted = 0
+      this.blockScreen = false;
 
   }
 
@@ -237,10 +230,7 @@ class Game {
        if ((this.father.y + this.father.height >= this.house3.y && this.father.y + this.father.height <= this.house3.y + this.house3.height) && (this.father.x >= this.house3.x && this.father.x <= this.house3.x + this.house3.width ||
             this.father.x + this.father.width >= this.house3.x && this.father.x + this.father.width <= this.house3.x + this.house3.width)){
             isColiding.down = true;          
-          }
-
-
-          
+          }          
  
       this._clean();
       this._drawFather();
@@ -260,9 +250,41 @@ class Game {
       }
   }
 
-  start() {
+  start() {  
+      themeSound.play()
       this._assignControls();
       this._update();
+      }
+
+  _showAlert(){
+    this.blockScreen = true;
+
+    const event = document.createElement('div')
+    event.innerHTML = 'OH NO! YOUR BABY IS CRYING!! WHAT SHOULD YOU DO?'
+    document.body.appendChild(event);
+
+    const option1 = document.createElement('button')
+    option1.innerHTML = 'Change diaper'
+    document.body.appendChild(option1);
+
+    const option2 = document.createElement('button')
+    option2.innerHTML = 'Give him a bottle of milk'
+    document.body.appendChild(option2);
+
+    const option3 = document.createElement('button')
+    option3.innerHTML = 'Give him the pacifier'
+    document.body.appendChild(option3);
+
+    const option4 = document.createElement('button')
+    option4.innerHTML = 'Run away'
+    document.body.appendChild(option4);
+
+    option1.onclick = function(){
+
+    }
+      
+
+    
   }
 
   _assignControls(){
@@ -314,6 +336,10 @@ _checkCollisions(){
   ) {
       this.tasksCompleted++;
       this.task1.x = -200;
+      pickupSound.play();
+      this._showAlert();
+      battleSound.play();
+      themeSound.pause();
   }
 
     if ((
@@ -327,6 +353,7 @@ _checkCollisions(){
   ) {
       this.tasksCompleted++;
       this.task2.x = -200;
+      pickupSound.play();
   }
 
     if ((
@@ -340,9 +367,12 @@ _checkCollisions(){
   ) {
       this.tasksCompleted++;
       this.task3.x = -200;
+      pickupSound.play();
+      //battleSound.play();    
+
   }
 
-  if (this.tasksCompleted === 3){    
+  if (this.tasksCompleted === 3){   
     this._gameOver();
   }
     
@@ -355,10 +385,12 @@ _writeScore(){
 }
 
 _gameOver(){
+  winSound.play();
+  themeSound.pause();
   const winPage = document.getElementById('win-page')
   winPage.style = "display: flex";
   const canvas = document.getElementById('canvas')
-  canvas.style = 'display: none;'
+  canvas.style = 'display: none;'  
 }
 
 }

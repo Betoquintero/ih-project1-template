@@ -15,3 +15,16 @@ obstacle2.src = './img/hospital.png';
 
 const obstacle3 = new Image();
 obstacle3.src = './img/centro-comercial.png';
+
+const winSound = new Audio();
+winSound.src = './sounds/winMusic.mp3';
+
+const themeSound = new Audio ();
+themeSound.src = './sounds/theme.mp3'
+
+const battleSound = new Audio ();
+battleSound.src = './sounds/wild-battle.mp3'
+
+const pickupSound = new Audio ();
+pickupSound.src = './sounds/pickup.mp3'
+
