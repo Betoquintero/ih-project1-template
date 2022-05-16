@@ -16,7 +16,7 @@
   text-align: center;
   margin: 0 auto;
   border: 1px solid black;
-  margin-top: 30px;
+  margin-top: 30px;  
 }
 
 #win-page {
@@ -73,5 +73,29 @@ justify-content: center;
 #clothe_option1{
   margin-left: 290px;
 }
+
+#start,
+#playAgain {
+  background-color: rgb(67,163,230);
+  color: white;
+  font-family: Roboto Condensed;
+  font-size: 2em;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 30px 10px 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1{
+  font-size: 60px;
+}
+
+#start-page{
+  background-image: url('../img/dad-and-baby.jpeg');
+}
+
+
 
 

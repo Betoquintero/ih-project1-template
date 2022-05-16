@@ -459,8 +459,8 @@ _checkCollisions(){
 }
 
 _writeScore(){
-    this.ctx.fillStyle = 'black';
-    this.ctx.font = '30px Verdana';
+    this.ctx.fillStyle = 'white';
+    this.ctx.font = '35px Verdana ';
     this.ctx.fillText(`Tasks completed: ${this.tasksCompleted}`, 700, 565)
 }
 
