@@ -28,17 +28,61 @@ battleSound.src = './sounds/wild-battle.mp3'
 const pickupSound = new Audio ();
 pickupSound.src = './sounds/pickup.mp3'
 
-const playerDownImage = new Image();
-playerDownImage.src = './img/playerDown.png'
+const playerDownImage1 = new Image();
+playerDownImage1.src = './img/animation/playerDown1.png'
 
-const playerUpImage = new Image();
-playerUpImage.src = './img/playerUp.png'
+const playerDownImage2 = new Image();
+playerDownImage2.src = './img/animation/playerDown2.png'
 
-const playerLeftImage = new Image();
-playerLeftImage.src = './img/playerLeft.png'
+const playerDownImage3 = new Image();
+playerDownImage3.src = './img/animation/playerDown3.png'
 
-const playerRightImage = new Image();
-playerRightImage.src = './img/playerRight.png'
+const playerDownImage4 = new Image();
+playerDownImage4.src = './img/animation/playerDown4.png'
+
+const playerUpImage1 = new Image();
+playerUpImage1.src = './img/animation/playerUp1.png'
+
+const playerUpImage2 = new Image();
+playerUpImage2.src = './img/animation/playerUp2.png'
+
+const playerUpImage3 = new Image();
+playerUpImage3.src = './img/animation/playerUp3.png'
+
+const playerUpImage4 = new Image();
+playerUpImage4.src = './img/animation/playerUp4.png'
+
+const playerLeftImage1 = new Image();
+playerLeftImage1.src = './img/animation/playerLeft1.png'
+
+const playerLeftImage2 = new Image();
+playerLeftImage2.src = './img/animation/playerLeft2.png'
+
+const playerLeftImage3 = new Image();
+playerLeftImage3.src = './img/animation/playerLeft3.png'
+
+const playerLeftImage4 = new Image();
+playerLeftImage4.src = './img/animation/playerLeft4.png'
+
+const playerRightImage1 = new Image();
+playerRightImage1.src = './img/animation/playerRight1.png'
+
+const playerRightImage2 = new Image();
+playerRightImage2.src = './img/animation/playerRight2.png'
+
+const playerRightImage3 = new Image();
+playerRightImage3.src = './img/animation/playerRight3.png'
+
+const playerRightImage4 = new Image();
+playerRightImage4.src = './img/animation/playerRight4.png'
+
+const walkStepsDown = [playerDownImage1, playerDownImage2, playerDownImage3, playerDownImage4]
+
+const walkStepsUp = [playerUpImage1, playerUpImage2, playerUpImage3, playerUpImage4]
+
+const walkStepsLeft = [playerLeftImage1, playerLeftImage2, playerLeftImage3, playerLeftImage4]
+
+const walkStepsRight = [playerRightImage1, playerRightImage2, playerRightImage3, playerRightImage4]
 
 
 

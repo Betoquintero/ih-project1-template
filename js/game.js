@@ -35,8 +35,9 @@ class Game {
   }
 
   _drawFather(){
-      this.ctx.fillStyle = "blue";
-      this.ctx.fillRect (this.father.x, this.father.y, this.father.width, this.father.height);     
+    this.ctx.drawImage(this.father.image, this.father.x, this.father.y, this.father.width, this.father.height)
+      //this.ctx.fillStyle = "blue";
+      //this.ctx.fillRect (this.father.x, this.father.y, this.father.width, this.father.height);     
   }
 
   _drawTasks(){
