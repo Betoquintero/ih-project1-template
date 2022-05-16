@@ -291,7 +291,7 @@ class Game {
       this.blockScreen = false;
       battleSound.pause();
       themeSound.play();
-      alert("Superdad changed the baby's diaper and is super effective!, You can continue!")
+      alert("Superdad changed the baby's diaper and is super effective! Continue!")
       event1.remove();
       option1.remove()
       option2.remove()
@@ -344,7 +344,7 @@ class Game {
       this.blockScreen = false;
       battleSound.pause();
       themeSound.play();
-      alert("Superdad gave the baby a bottle of milk and it's super effective!, You can continue!")
+      alert("Superdad gave the baby a bottle of milk and it's super effective! Continue!")
       event2.remove();
       option1.remove();
       option2.remove();

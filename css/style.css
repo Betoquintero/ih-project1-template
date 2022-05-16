@@ -42,3 +42,36 @@ canvas {
 .shown {
   display: flex;
 }
+
+#event1, #event2 {
+font-size: xx-large;
+display: flex;
+justify-content: center;
+}
+
+#burger_option1, 
+#burger_option2,
+#burger_option3,
+#burger_option4,
+#clothe_option1,
+#clothe_option2,
+#clothe_option3,
+#clothe_option4 {
+  background-color: rgb(67,163,230);
+  color: white;
+  font-family: Roboto Condensed;
+  font-size: 2em;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 30px 10px 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#burger_option1,
+#clothe_option1{
+  margin-left: 290px;
+}
+
+
