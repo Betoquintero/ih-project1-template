@@ -397,6 +397,7 @@ class Game {
     option4.innerHTML = 'Run away'
     document.body.appendChild(option4);
 
+
     option3.onclick = () => {
       this.blockScreen = false;
       battleSound.pause();
