@@ -16,7 +16,10 @@
   text-align: center;
   margin: 0 auto;
   border: 1px solid black;
-  margin-top: 30px;  
+  margin-top: 30px;
+  background-image: url('../img/superdad.webp');
+  background-repeat: no-repeat;
+  background-position: -250px;  
 }
 
 #win-page {
@@ -43,7 +46,7 @@ canvas {
   display: flex;
 }
 
-#event1, #event2 {
+#event1, #event2, #event3 {
 font-size: xx-large;
 display: flex;
 justify-content: center;
@@ -56,7 +59,11 @@ justify-content: center;
 #clothe_option1,
 #clothe_option2,
 #clothe_option3,
-#clothe_option4 {
+#clothe_option4,
+#medic_option1,
+#medic_option2,
+#medic_option3,
+#medic_option4 {
   background-color: rgb(67,163,230);
   color: white;
   font-family: Roboto Condensed;
@@ -70,7 +77,8 @@ justify-content: center;
 }
 
 #burger_option1,
-#clothe_option1{
+#clothe_option1,
+#medic_option1{
   margin-left: 290px;
 }
 
@@ -84,16 +92,33 @@ justify-content: center;
   text-align: center;
   text-decoration: none;
   padding: 10px 30px 10px 30px;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: 30px;
+  margin-left: 500px;
 }
 
 h1{
   font-size: 60px;
+  text-align: center;
+  margin-left: 500px;
 }
 
-#start-page{
-  background-image: url('../img/dad-and-baby.jpeg');
+ #instructions{
+   text-align: center;
+   width: 50%;
+   margin-left: 500px;
+   font-size: 20px;
+ }
+
+ #instructions-1{
+   margin-top: 20px;
+ }
+
+ #instructions-2{
+  margin-top: 20px;
+}
+
+#instructions-3{
+  margin-top: 20px;
 }
 
 

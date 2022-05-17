@@ -257,6 +257,7 @@ class Game {
       themeSound.play()
       this._assignControls();
       this._update();
+      document.getElementById('intro').pause()
       }
 
   _showAlert_hamburguer(){
@@ -297,6 +298,7 @@ class Game {
       option2.remove()
       option3.remove()
       option4.remove()
+      this.tasksCompleted++;
     }
 
     option2.onclick = () => {
@@ -350,6 +352,7 @@ class Game {
       option2.remove();
       option3.remove();
       option4.remove();
+      this.tasksCompleted++;
 
     }
 
@@ -359,6 +362,61 @@ class Game {
 
     option3.onclick = () => {
       alert ("Dad tried to give the baby his pacifier but he refuses!, Try again!")
+    }
+
+    option4.onclick = () => {
+      alert ("Superdads don't quit!, Try again!")
+    }    
+  }
+
+  _showAlert_medic(){
+    this.blockScreen = true;
+
+    const event3 = document.createElement('div')
+    event3.id = 'event3'
+    event3.innerHTML = 'OH NO! YOUR BABY IS CRYING!! WHAT SHOULD YOU DO?'
+    document.body.appendChild(event3);
+
+    const option1 = document.createElement('button')
+    option1.id = 'medic_option1';
+    option1.innerHTML = 'Change diaper'
+    document.body.appendChild(option1);
+
+    const option2 = document.createElement('button')
+    option2.id = 'medic_option2';
+    option2.innerHTML = 'Give him a bottle of milk'
+    document.body.appendChild(option2);
+
+    const option3 = document.createElement('button')
+    option3.id = 'medic_option3';
+    option3.innerHTML = 'Give him the pacifier'
+    document.body.appendChild(option3);
+
+    const option4 = document.createElement('button')
+    option4.id = 'medic_option4';
+    option4.innerHTML = 'Run away'
+    document.body.appendChild(option4);
+
+    option3.onclick = () => {
+      this.blockScreen = false;
+      battleSound.pause();
+      themeSound.play();
+      alert(" Superdad gave the baby a pacifier and it is effective!! Continue!")
+      event3.remove();
+      option1.remove();
+      option2.remove();
+      option3.remove();
+      option4.remove();
+      this.tasksCompleted++;
+
+    }
+
+    option1.onclick = () => {
+      alert ("Superdad changed the baby's diaper and it's not very effective!, Try again!")
+    }
+
+    option2.onclick = () => {
+      alert ("Superdad gave the baby a bottle of milk and it's NOT effective!, Try again")
     }
 
     option4.onclick = () => {
@@ -413,7 +471,7 @@ _checkCollisions(){
         this.father.y + this.father.height >= this.task1.y && this.father.y +this.father.height <= this.task1.y + this.task1.height
     )
   ) {
-      this.tasksCompleted++;
+      
       this.task1.x = -200;
       pickupSound.play();
       this._showAlert_hamburguer();
@@ -430,7 +488,7 @@ _checkCollisions(){
         this.father.y + this.father.height >= this.task2.y && this.father.y +this.father.height <= this.task2.y + this.task2.height
     )
   ) {
-      this.tasksCompleted++;
+      
       this.task2.x = -200;
       pickupSound.play();
       this._showAlert_clothe();
@@ -447,9 +505,11 @@ _checkCollisions(){
         this.father.y + this.father.height >= this.task3.y && this.father.y +this.father.height <= this.task3.y + this.task3.height
     )
   ) {
-      this.tasksCompleted++;
+      
       this.task3.x = -200;
       pickupSound.play();
+      battleSound.play();
+      this._showAlert_medic();
   }
 
   if (this.tasksCompleted === 3){   
