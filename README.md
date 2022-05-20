@@ -36,8 +36,9 @@ Minimum user stories:
 ## Useful links
 
 <!-- When you finish, add these links and commit -->
+- Presentation slides:
+- [file:///home/alberto/Descargas/slides-minimal%20(4).html]()
 
-- [Presentation slides]()
-file:///home/alberto/Descargas/slides-minimal%20(4).html
-- [Deployed game]()
-https://betoquintero.github.io/ih-project1-template/
+- Deployed Game:
+- [https://betoquintero.github.io/ih-project1-template/]()
+
