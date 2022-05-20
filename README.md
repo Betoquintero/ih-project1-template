@@ -1,4 +1,4 @@
-# Game name
+# Poke-son
 
 <!-- When you finish, add a nice screenshot of your game -->
 [<img src="./img/demopicture.png">]()
