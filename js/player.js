@@ -6,6 +6,7 @@ class Player {
         this.height = height;
         this.image = walkStepsDown[0]
         this.stepCounter = 1
+        this.stepCounterDown = 1
 
     }
         

@@ -303,6 +303,15 @@ class Game {
 
     option2.onclick = () => {
       alert ("Dad tried to give the baby a bottle of milk and it's not effective!, Try again!")
+      //let popUp = document.createElement ("div")
+      //popUp.innerText = "Dad tried to give the baby a bottle of milk and it's not effective!, Try again!"
+      //let cross = document.createElement ("span")
+      //cross.innerText = 'X'
+      //cross.addEventListener('click', popUp.remove() )
+      //popUp.appendChild (cross)
+
+
+      //document.body.appendChild (popUp)
     }
 
     option3.onclick = () => {
@@ -508,6 +517,7 @@ _checkCollisions(){
   ) {
       
       this.task3.x = -200;
+      themeSound.pause();
       pickupSound.play();
       battleSound.play();
       this._showAlert_medic();

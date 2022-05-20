@@ -76,13 +76,13 @@ playerRightImage3.src = './img/animation/playerRight3.png'
 const playerRightImage4 = new Image();
 playerRightImage4.src = './img/animation/playerRight4.png'
 
-const walkStepsDown = [playerDownImage1, playerDownImage2, playerDownImage3, playerDownImage4]
+const walkStepsDown = [playerDownImage1,playerDownImage1, playerDownImage1, playerDownImage1, playerDownImage2, playerDownImage2, playerDownImage2, playerDownImage2, playerDownImage2, playerDownImage3, playerDownImage3, playerDownImage3, playerDownImage3, playerDownImage4, playerDownImage4, playerDownImage4, playerDownImage4]
 
-const walkStepsUp = [playerUpImage1, playerUpImage2, playerUpImage3, playerUpImage4]
+const walkStepsUp = [playerUpImage1, playerUpImage1, playerUpImage1, playerUpImage1, playerUpImage2, playerUpImage2, playerUpImage2, playerUpImage2, playerUpImage3, playerUpImage3, playerUpImage3, playerUpImage3, playerUpImage4, playerUpImage4, playerUpImage4, playerUpImage4 ]
 
-const walkStepsLeft = [playerLeftImage1, playerLeftImage2, playerLeftImage3, playerLeftImage4]
+const walkStepsLeft = [playerLeftImage1, playerLeftImage1, playerLeftImage1, playerLeftImage1, playerLeftImage2, playerLeftImage2, playerLeftImage2, playerLeftImage2, playerLeftImage3, playerLeftImage3, playerLeftImage3, playerLeftImage3, playerLeftImage4, playerLeftImage4, playerLeftImage4, playerLeftImage4]
 
-const walkStepsRight = [playerRightImage1, playerRightImage2, playerRightImage3, playerRightImage4]
+const walkStepsRight = [playerRightImage1, playerRightImage1, playerRightImage1, playerRightImage1, playerRightImage2, playerRightImage2, playerRightImage2, playerRightImage2, playerRightImage3, playerRightImage3, playerRightImage3, playerRightImage3, playerRightImage4, playerRightImage4, playerRightImage4, playerRightImage4]
 
 
 
