@@ -40,5 +40,5 @@ Minimum user stories:
 - [file:///home/alberto/Descargas/slides-minimal%20(4).html]()
 
 - Deployed Game:
-- [https://betoquintero.github.io/ih-project1-template/]()
+- https://betoquintero.github.io/ih-project1-template/
 
